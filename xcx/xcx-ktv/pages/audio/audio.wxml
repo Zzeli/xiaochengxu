@@ -1,0 +1,26 @@
+<view class="audio containers" style="background-image:url('../../img/singer-banner.png')">
+  <view class="nav">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <view id="{{index}}" class="nav-list" bindtap="navClick">
+        <view class="{{index == active ? 'active': ''}}"></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+   <import src="../template/template.wxml" /> 
+  <template is="{{active===1?'rinking':null}}" data="{{navList,navSwich,ranking}}"></template>
+
+    <!--歌手详情-->
+    <!-- <view class="singerlist" hidden="{{singerTab !== true}}"> -->
+     <view class="singerlist">
+      <block wx:for="{{singerInfo}}" wx:key="{{index}}">
+        <view class="singerList-main">
+          <view class="img">
+            <image src="{{'/img/'+item.img}}" class="img-con"></image>
+          </view>
+          <view class="title">{{item.name +'('+item.num+')'}}</view>
+        </view>
+      </block>
+
+    </view>
+</view>

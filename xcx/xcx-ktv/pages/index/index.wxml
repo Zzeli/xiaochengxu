@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container" style="background:url(../../img/index-background.png) no-repeat center/cover">
+  <view class="index-list">
+    <navigator wx:for="{{indexinfo}}"  url="{{item.url}}" wx:key="{{index}}" class="item" style="background-image:url({{item.img}})"></navigator>
+  </view>
+</view>

@@ -1,0 +1,210 @@
+/* details.wxss */
+@import "../index/index.wxss";
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #F2F2F2;
+}
+/* 直接设置swiper属性 */
+swiper {
+  height:750rpx;
+}
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16rpx;
+  margin-bottom: 0rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding-top: 28rpx;
+}
+.detail .title {
+  font-family: "微软雅黑";
+  text-align: justify;
+   font-size: 26rpx;
+  font-weight: 500;
+  color: #37383b;
+}
+.detail .price {
+  margin: 10rpx;
+  margin-bottom: 0;
+  font-size: 30rpx;
+  text-align: left;
+  color: #ec033f;
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+.detail .price text{
+   font-size: 22rpx;
+  text-align: left;
+  color: #ec033f;
+}
+.detail .price .stock,.detail .price .carriage{
+  font-family: "微软雅黑";
+  font-size: 22rpx;
+  text-align: left;
+  color: #4e4d4d;
+  margin-left: 41rpx;
+}
+.num,.charge{
+   font-size: 22rpx;
+   color: #b4b0b0!important;
+   margin: 0;
+   line-height: 22rpx;
+}
+.line_flag {
+  width: 80rpx;
+  height: 1rpx;
+  display: inline-block;
+  margin: 20rpx auto;
+  background-color: gainsboro;
+  text-align: center;
+}
+.line {
+  width: 100%;
+  height: 2rpx;
+  display: inline-block;
+  margin: 20rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
+}
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 98rpx;
+}
+.detail-nav button{
+  background: none;  
+  color: #000; 
+}
+.button-green {
+   background-image: linear-gradient(to right, #fc5b45, #f91212);
+}
+.button-red {
+ background-image: linear-gradient(to right, #e50504, #be0000);
+}
+.image_detail {
+  width: 100%;
+}
+button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 30rpx;
+  width: 50%;
+  height: 100%;
+  font-weight: 500;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0!important;
+  color: #f8f6f6;
+}
+button:nth-child(2){
+  border-left: 1px solid #f3f1f1;
+}
+button::after {
+  border:0;
+  border-radius: 0;
+}
+.detail-nav image {
+  width: 57rpx;
+  height: 52rpx;
+  margin-right: 30rpx;
+}
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+/* 占位 */
+.temp {
+  height: 35rpx;
+}
+text {
+  display: block;
+  font-size: 30rpx;
+  margin: 10rpx;
+}
+.text-remark {
+  display: block;
+  font-size: 25rpx;
+  margin: 10rpx;
+}
+.no1{
+  position: relative;
+  font-size: 20rpx;
+  display: inline-block;
+}
+.no1 .hr_class{
+  position: absolute;
+  width: 100%;
+  top: 12rpx;
+  color: #c1c3c6;
+}
+.market{
+  display: flex;
+  align-items: center;
+  margin-bottom: 44rpx;
+ 
+}
+.market text{
+  font-family: "微软雅黑";  
+  font-size: 20rpx;
+  text-align: left;
+  color: #bbb7b8;
+  line-height: 20rpx;
+}
+.describe{
+  padding: 31rpx 19rpx 27rpx 17rpx;
+  background: #fff;
+  margin-top: 14rpx;
+}
+.describe .title{
+  font-family:"微软雅黑";
+  font-size: 26rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #37383b;
+}
+.describe .matter{
+  font-family: "微软雅黑";
+  font-size: 22rpx;
+  line-height: 1.82;
+  text-align: justify;
+  color: #6b6a6a;
+}
+.describe .show{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 27rpx;
+}
+.exhibit{
+  padding-bottom: 0;
+}
+
+.pic{
+  width: 350rpx;
+  height: 350rpx;
+  margin-bottom: 13rpx;
+}
+.skill{
+  margin-top:30rpx;
+}
+

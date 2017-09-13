@@ -1,0 +1,22 @@
+.container{
+  width:100%;
+  height:100vh;
+}
+.index-list{
+  width:100%;
+  height:40%;
+  padding: 0 22rpx;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-flow: row wrap;
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+.index-list .item{
+  width:48.3%;
+  height:48%;
+  background:#fff no-repeat center/cover;
+}

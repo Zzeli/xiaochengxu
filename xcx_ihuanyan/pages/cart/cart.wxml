@@ -1,0 +1,55 @@
+<!--del.wxml-->
+<view class="contain">
+<view class="navbar">
+      <text>小商城</text>
+      <!-- <text bindtap="{{edit}}">编辑</text> -->
+      </view>  
+      
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="index">
+  <view class="content">
+               <icon wx:if="{{item.selected}}" type="success" color="red" bindtap="selectList" data-index="{{index}}" />
+               <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" />
+                    
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                    <navigator url="../details/details?id={{item.id}}">
+                      <image class="carts-image" src="{{item.image}}"></image>
+                    </navigator>
+                    <view class="carts-right">
+                        <text class="carts-title">{{item.title}}</text>
+                        <view class="carts-price">
+                              ￥{{item.price}}
+                        <view class="goodsNumber">
+                              <text bindtap="minusCount" data-index="{{index}}">-</text>
+                              <text>{{item.num}}</text>
+                              <text bindtap="addCount" data-index="{{index}}">+</text>
+                            </view>
+                        
+                        </view>
+                          
+                    </view>
+  
+  
+  </view>
+  <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+ </view>
+ <!-- 底部操作栏 -->
+              <view class="select">
+                <!-- wx:if 是否全选显示不同图标 -->
+                <icon wx:if="{{selectAllStatus}}" type="success_circle" color="red" bindtap="selectAll"/>
+                <icon wx:else type="circle" color="#aaaaaa" bindtap="selectAll"/>
+                <text>全选</text>
+                
+                <!-- 总价 -->
+                
+                <view class="payfor">
+                      <view>
+                      <text>合计</text>
+                       ￥{{totalPrice}}
+                       </view>
+                     <view class="pay">
+                      去结算
+                      </view>
+                </view>
+              </view>
+              
+          </view>

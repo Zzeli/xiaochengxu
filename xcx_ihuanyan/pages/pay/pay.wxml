@@ -1,0 +1,77 @@
+<!--pages/pay/pay.wxml-->
+<view class="contain">
+<view class="navbar">
+      <block  wx:if='{{noaddress==1}}'>
+            <navigator url="../addAddress/addAddress"  hover-class="other-navigator-hover">
+                <text>在此添加收货地址~</text> 
+            </navigator>
+       </block>
+
+       <view wx:else class="kind-list-item-bd kind-list-item-bd-show">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block>
+                <navigator url="../addressList/addressList" hover-class="other-navigator-hover" class="navigator">
+                  <view class="navigator-text">
+                     <view class='message'>
+                          <text class='name'>陈聪</text>
+                          <text class='address'>山西省太原市学府街华宇百花谷C座26层</text>
+                     
+                     </view>
+                     <text class='tel'>13834159700</text>
+                  
+                  </view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+</view>  
+      
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="index">
+  <view class="content">
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                    <navigator url="../details/details?id={{item.id}}">
+                      <image class="carts-image" src="{{item.image}}"></image>
+                    </navigator>
+                    <view class="carts-right">
+                        <text class="carts-title">{{item.title}}</text>
+                        <view class="carts-price">
+                             <text class='price'>￥{{item.price}}</text>
+                            <text class='num'>x {{item.num}}</text>
+                        </view>
+                          
+                    </view>
+
+  </view>
+ </view>
+  <view class='pay-goods'>
+        <view class='pay-sale'>
+        <text>商品金额</text>
+        <text>￥{{total}}</text>
+        </view>
+      <view class='pay-sale'>
+        <text>运费</text>
+        <text>+ ￥ {{carriage}}</text>
+        </view>
+        <view class='pay-sale'>
+        <text>优惠券</text>
+        <text>- ￥ {{perfer}}</text>
+        </view>
+  
+  
+  
+  
+  </view>
+
+   <view class="select">
+                <view class="payfor">
+                      <view>
+                      <text>合计</text>
+                       ￥{{final}}
+                       </view>
+                     <view class="pay" type="primary" bindtap="requestPayment" loading="{{loading}}">
+                      确认支付
+                      </view>
+                </view>
+              </view>
+</view>

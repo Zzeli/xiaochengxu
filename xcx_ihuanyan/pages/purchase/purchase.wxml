@@ -1,0 +1,179 @@
+<!--purchase.wxml-->
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+  
+<!--首页-->  
+
+<view hidden='{{indent==null}}' class='noindent'>
+  <view class='bg' style="background:url('../../images/indent.png')center/cover no-repeat"></view>
+  <text>亲，你还没有订单哦～</text>
+</view>
+
+
+<view hidden="{{currentTab!==0}}">  
+        <view class="container carts-list">
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+        <view class="indent">
+                <text>订单编号{{item.indent}}</text>
+                <text class="status">{{item.status}}</text>        
+        
+        </view>
+
+        <view class="indent-details">
+            <view>
+                <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+                </view>
+              <view class="carts-text">
+                <view class="carts-title">{{item.title}}</view>
+                <view class="carts-subtitle">
+                <view class="carts-price">
+                <text class="mark">￥</text>
+                {{item.sum}}
+                </view>
+                <text class="num">x{{item.num}}</text>
+                </view>
+              </view>
+              </view>
+        </view>
+         
+      </view>
+</view>  
+  
+<!--搜索-->  
+<view hidden="{{currentTab!==1}}">  
+    <view class="container carts-list">
+     
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+           <view class="indent">
+                <text>订单编号{{item.indent}}</text>
+                <text class="status">{{item.status}}</text>        
+        
+          </view>
+
+        <view class="indent-details">
+          <view>
+          <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+          </view>
+        <view class="carts-text">
+          <view class="carts-title">
+            {{item.title}}
+            <view class="pay">
+                <text>取消</text>
+                <text>付款</text>
+            </view> 
+          
+          </view>
+          <view class="carts-subtitle">
+          <view class="carts-price">
+          <text class="mark">￥</text>
+          {{item.sum}}
+          </view>
+          <text class="num">x{{item.num}}</text>
+          </view>
+        </view>
+        </view>
+        </view>
+      </view>
+</view>  
+  
+<!--我-->  
+<view hidden="{{currentTab!==2}}">  
+  <view class="container carts-list">
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+        <view class="indent">
+                <text>订单编号{{item.indent}}</text>
+                <text class="status">{{item.status}}</text>        
+        
+          </view>
+
+        <view class="indent-details">
+          <view>
+          <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+          </view>
+        <view class="carts-text">
+          <view class="carts-title">
+            {{item.title}}
+            <view class="pay">
+                <text>联系卖家</text>
+            </view> 
+          
+          </view>
+          <view class="carts-subtitle">
+          <view class="carts-price">
+          <text class="mark">￥</text>
+          {{item.sum}}
+          </view>
+          <text class="num">x{{item.num}}</text>
+          </view>
+        </view>
+        </view>
+        </view>
+      </view> 
+</view>  
+<view hidden="{{currentTab!==3}}">  
+   <view class="container carts-list">
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+        <view class="indent">
+                <text>订单编号{{item.indent}}</text>
+                <text class="status">{{item.status}}</text>        
+        
+          </view>
+
+        <view class="indent-details">
+          <view>
+          <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+          </view>
+        <view class="carts-text">
+          <view class="carts-title">
+            {{item.title}}
+            <view class="pay">
+                <text>确认收货</text>
+            </view> 
+          
+          </view>
+          <view class="carts-subtitle">
+          <view class="carts-price">
+          <text class="mark">￥</text>
+          {{item.sum}}
+          </view>
+          <text class="num">x{{item.num}}</text>
+          </view>
+        </view>
+        </view>
+        </view>
+      </view> 
+</view>  
+<view hidden="{{currentTab!==4}}">  
+   <view class="container carts-list">
+        <view wx:for="{{carts}}" class="carts-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+        <view class="indent">
+                <text>订单编号{{item.indent}}</text>
+                <text class="status">{{item.status}}</text>        
+        
+          </view>
+
+        <view class="indent-details">
+          <view>
+          <image class="carts-image" src="{{item.image}}" mode="aspectFill"/>
+          </view>
+        <view class="carts-text">
+          <view class="carts-title">
+            {{item.title}}
+            <view class="pay">
+                <text>去评价</text>
+            </view> 
+          
+          </view>
+          <view class="carts-subtitle">
+          <view class="carts-price">
+          <text class="mark">￥</text>
+          {{item.sum}}
+          </view>
+          <text class="num">x{{item.num}}</text>
+          </view>
+          </view>
+        </view>
+        </view>
+      </view> 
+</view>  

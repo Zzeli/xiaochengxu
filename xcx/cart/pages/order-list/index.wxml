@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentTpye ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            {{item}}
+            <view class="{{tabClass[index]}}" wx:if="{{index!=0}}"></view>
+        </view>
+    </view>
+    <view class="no-order" hidden="{{orderList ? true : false}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无订单</view>
+    </view>
+    <view class="order-list" hidden="{{orderList ? false : true}}">
+        <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+            <view class="order-date">
+                <view class="date-box">下单时间：{{item.add_time}}</view>
+                <view class="status {{(item.status == '订单取消') ? '':'red'}}">{{item.order_status}}</view>
+            </view>
+            <view class="goods-info" bindtap="orderDetail" data-id="{{item.order_id}}">
+                <view class="goods-des">
+                   <view>订单号:{{item.order_sn}} </view>
+                   <view wx:if="{{item.pay_note}}">备注： {{item.pay_note}}</view>
+                </view>
+            </view>
+            <view >
+                <scroll-view class="goods-img-container" scroll-x="true">
+                    <view class="img-box" wx:for-items="{{item.img}}" wx:key="{{index}}">
+                        <image src="{{item}}" class="goods-img"></image>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="price-box">
+                <view class="total-price">合计：¥ {{item.goods_amount}}</view>
+                <view class="btn cancel-btn" hidden="{{(item.order_status == '等待付款') ? fslse : true}}" bindtap="cancelOrderTap"  data-id="{{item.order_id}}">取消订单</view>
+                <view class="btn topay-btn" hidden="{{(item.order_status == '等待付款') ? fslse : true}}" bindtap="toPayTap" data-id="{{item.order_id}}" data-money="{{item.goods_amount}}">马上付款</view>        
+            </view>  
+        </view>
+
+    </view>
+</view>

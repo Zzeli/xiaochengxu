@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/audio/audio",
+    "pages/template/template"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "KTV",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,5 @@
+<!--about.wxml-->
+<view class="content" wx:for="{{images}}">
+     <image src='{{item}}' bindload="imageLoad" data-index="{{ index }}" 
+style="width:{{ imgwidth }}; height:{{ imgheight }}rpx;"></image>
+</view>

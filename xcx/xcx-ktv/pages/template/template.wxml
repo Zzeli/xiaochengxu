@@ -1,0 +1,32 @@
+ <!--歌手-->
+<template name="singer">
+  <form bindsubmit="formSubmit" class="search" hidden="{{active != 0}}">
+    <input name="input" type="search" placeholder="请输入您要搜索的歌手" />
+  </form>
+      <view class="main-content">
+        <block wx:for="{{singer}}" wx:key="{{index}}">
+          <view class="main-item" style="background-image:url({{'/img/'+item.path}})" bindtap="mainSinger" data-singer="{{item.name}}"></view>
+        </block>
+      </view>
+</template>
+
+
+<!--排行榜-->
+<template name="rinking">
+      <view class="rink">
+        <!--排行分类-->
+        <view class="rink-nav">
+          <block wx:for="{{navList}}" wx:key="{{index}}">
+            <view class="rink-nav-item{{index === 1?' active':''}}">{{item}}</view>
+          </block>
+        </view>
+        <!--排行swiper-->
+        <swiper autoplay="true" interval="2000" duration="500">
+          <block wx:for="{{navSwich}}" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{'/img/'+item}}" class="slide-image" width="355" height="150" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+</template>

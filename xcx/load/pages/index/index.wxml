@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" style="height:600px" bindscrolltolower="lower">
+<block wx:for="{{list}}">
+<view style="clear:both;">
+<image src="{{item.headpic}}" class="img"></image>
+<view class="description">
+<text>{{item.name}}</text>
+<view style="margin-top:20rpx">{{item.time}}</view>
+</view>
+</view> 
+</block>
+</scroll-view>

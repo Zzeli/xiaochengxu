@@ -1,0 +1,35 @@
+  <!--pages/addressList/addressList.wxml-->
+<view class="contain">
+      <view class="navbar">
+          
+
+            <view class="kind-list-item-bd kind-list-item-bd-show">
+                  <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                    <block wx:for="{{message}}" wx:key="{{index}}">
+                        <view class="navigator-text">
+                        <icon wx:if="{{item.selected}}" type="success_circle" color="red" bindtap="selectList" data-index="{{index}}" />
+                        <icon wx:else type="circle" color="#aaaaaa" bindtap="selectList" data-index="{{index}}" />
+                          <view class='message'>
+                                <text class='name'>{{item.name}}</text>
+                                <text class='address'>{{item.address}}</text>
+                          
+                          </view>
+                          <text class='tel'>{{item.tel}}</text>
+                           <navigator url="../addAddress/addAddress?id={{item.gcate_id}}" hover-class="other-navigator-hover" class="navigator">
+                         <view class='edit' style='background:url(../../images/edit.png)center/cover no-repeat'>
+                         </view>
+
+                      </navigator>
+                        </view>
+                   
+                    </block>
+                  </view>
+                </view>
+      </view>  
+
+  <view class="btn-area" id="buttonContainer">
+        <button type="primary" hover-class="other-button-hover" bindtap='add'>+ 添加新地址 +</button>
+        
+    </view>
+
+</view>

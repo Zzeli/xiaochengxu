@@ -1,0 +1,68 @@
+<!--index.wxml-->
+
+<view class="contain">
+ <form bindsubmit="bindSave">
+    <view class="form-box">
+  <view class="input">
+    <text>收货人</text>
+
+    <input value="{{addressData.consignee}}" focus="{{focus}}" name="linkMan" />
+  
+  </view>
+    <view class="input">
+     <text>联系电话</text>
+
+    <input value="{{addressData.mobile}}" focus="{{focus}}" name="mobile"  />
+  
+  </view>
+
+  <view class="input">
+  <text>地址</text>
+    <input name="county" placeholder="地址" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
+  </view>
+   <view class="input">
+<text>详细地址</text>
+    <input name="address" placeholder="具体到街道、门牌号" value="{{addressData.address}}" focus="{{focus}}"  />
+  
+  </view>
+  <view class="input">
+<text>邮编</text>
+    <input name="code" value="{{addressData.zipcode}}" focus="{{focus}}"/>
+  
+  </view>
+    <view class="btn-area" id="buttonContainer">
+        <button type="primary" hover-class="other-button-hover" bindtap='save' formType="submit">保存</button>
+        <button type="default" class="save-btn" bindtap="deleteAddress" data-id="{{addressData.address_id}}" wx:if="{{addressData}}">删除该地址</button>
+        <button type="default" bindtap='cancel'>取消</button>
+    </view>
+    </view>
+
+
+   </form>
+</view>
+
+
+<view class='shaow' hidden='{{shaow}}'>
+    <view class='shaow-con'></view>
+      <view wx:if="{{condition}}" class="citypicker">
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+        <view class="cityheader">
+          <view bindtap="open" class="city-cancel">取消</view>
+          <view bindtap="open" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+ 
+
+</view>
+
+  
